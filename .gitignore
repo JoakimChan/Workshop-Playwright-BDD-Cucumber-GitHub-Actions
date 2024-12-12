@@ -1,3 +1,7 @@
+# Test results
+tests/results/test-result.json
+tests/results/test-result.html
+
 # Logs
 logs
 *.log
