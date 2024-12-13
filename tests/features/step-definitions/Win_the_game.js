@@ -34,7 +34,7 @@ Given('that I make the choice to {string}', async function (choice) {
 
 Given('that I know my current health', async function () {
   const healthElement = await this.get('.health .progress');
-  this.previousHealth = parseInt(await healthElement.getText(), 10);
+  this.previousHealth = parseInt(await this.getText(healthElement), 10);
 });
 
 When('I wait for the event {string} to take place', async function (eventDescription) {
@@ -45,7 +45,7 @@ When('I wait for the event {string} to take place', async function (eventDescrip
 
 Then('my health should be {string}', async function (condition) {
   const healthElement = await this.get('.health .progress');
-  const currentHealth = parseInt(await healthElement.getText(), 10);
+  const currentHealth = parseInt(await this.getText(healthElement), 10);
 
   if (condition === 'unchanged') {
     expect(currentHealth).to.equal(this.previousHealth);
