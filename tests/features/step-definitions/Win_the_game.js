@@ -17,13 +17,13 @@ Then('the value of my {string} should be {float}', async function (statusType, e
   };
   const cssSelector = selectorMap[statusType];
   const element = await this.get(cssSelector);
-  const numValue = +(await element.getText());
+  const numValue = +(await this.getText(element));
   expect(numValue).to.equal(expectedNumValue);
 });
 
 Then('my hipster bag should contain {string}', async function (expectedBagContent) {
   const bagElement = await this.get('.bag-content');
-  const bagContent = (await bagElement.getText()).trim();
+  const bagContent = (await this.getText(bagElement)).trim();
   expect(bagContent).to.equal(expectedBagContent);
 });
 
