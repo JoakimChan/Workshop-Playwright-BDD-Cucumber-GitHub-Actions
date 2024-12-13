@@ -12,7 +12,7 @@ Feature: Loss the game by health
 
     Scenario Outline: Press the "Wait" button multiple times to lose health
         When I wait for the event "<event1>" or "<event2>" to take place
-        Then the value of my "Health" should be "<health1>" or "<health2>"
+        Then the value of my Health should be "<health1>" or "<health2>"
 
         Examples:
             | event1                       | event2                       | health1 | health2 |
@@ -26,6 +26,7 @@ Feature: Loss the game by health
 
     Scenario: press the "Wait" button to loss
         When I wait for the event "You health has deteriorated too much" to take place
-        Then the value of my "Health" should be "0"
+        Then the value of my Health should be 0
         And the text should contain "you feel almost dead"
+        And that I know my current menu choices
         And I should be given the new choice "Play again"

@@ -8,7 +8,7 @@ Feature: change loction
     Then my position should be "<position>"
 
     Examples:
-      | choice         | position              |
-      | Go north       | an empty street       |
-      | Go south       | the contry-side       |
-      | Enter the cafe | the Cloud Forest Cafe |
+      | choice         | position            |
+      | Go north       | on an empty street  |
+      | Go south       | in the country-side |
+      | Enter the cafe | inside the cafe     |

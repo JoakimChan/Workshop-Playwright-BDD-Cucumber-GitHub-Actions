@@ -1,4 +1,3 @@
-
 import { Given, When, Then } from '@cucumber/cucumber';
 import { navigateTo, getWhereIAm, getMenuChoiceElement } from './helpers.js'
 import { expect } from 'chai';
